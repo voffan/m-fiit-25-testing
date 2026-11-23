@@ -1,9 +1,18 @@
 def nod(n, m):
-    pass
+    if n < 0 or m < 0:
+        raise Exception("n and m must be > 0!")
+    if not isinstance(n, int) or not isinstance(m, int):
+        raise Exception("n and m must be integer!")
+    r = n
+    while r > 0:
+        r = n % m
+        n = m
+        m = r
+    return n + m
 
 
 def nok(n, m):
-    pass
+    return n*m / nod(n,m)
 
 
 if __name__ == "__main__":
